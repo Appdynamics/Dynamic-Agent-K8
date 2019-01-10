@@ -8,6 +8,7 @@ spec:
       labels: 
         name: sim-os-agent
     spec:
+      serviceAccountName: appd-sim-agent
       containers:
       - env:
         - name: IS_K8_DEPLOYMENT
@@ -42,7 +43,9 @@ spec:
               fieldPath: spec.nodeName
         - name: METRIC_LIMIT
           value: "2000"
-        image: jdbarfield/dynamic-agent-k8:1.1.12
+        image: jdbarfield/dynamic-agent-k8:1.1.14
+        securityContext:
+          privileged: true
         name: sim-os-agent
         resources: {}
         volumeMounts:

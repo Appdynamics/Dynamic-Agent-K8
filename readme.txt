@@ -49,23 +49,26 @@ Example: ACCOUNT_ACCESS_KEY=a5f426acdff0
 APPLICATION_NAME or APPLICATION_NAME_FROM + APPLICATION_NAME_FROM_VALUE
 If all are populated, APPLICATION_NAME will be used as the default if the application name label cannot be found.
 
-APPLICATION_NAME
-Notes: Do not use spaces in the Application Name
-Example: APPLICATION_NAME=MyApp
- 
 APPLICATION_NAME_FROM
-Possible values: CONTAINER_LABEL
-Example: APPLICATION_NAME_FROM=CONTAINER_LABEL
+Notes: If a match can be found from APPLICATION_NAME_FROM + APPLICATION_NAME_FROM_VALUE, 
+the match will be used for the Application Name of that container. Otherwise, it will use the value from APPLICATION_NAME
+Possible values: CONTAINER_LABEL, JVM_PARAM, or CONTAINER_NAME_REGEX
 
 APPLICATION_NAME_FROM_VALUE
-Example: APPLICATION_NAME_FROM_VALUE=application-name
+Notes: Used with APPLICATION_NAME_FROM. If using CONTAINER_NAME_REGEX, do not include escape characters, spaces, or add quotes around the regex
+Examples: 
+APPLICATION_NAME_FROM=CONTAINER_NAME_REGEX
+APPLICATION_NAME_FROM_VALUE=.(.*_.*?)_
+
+APPLICATION_NAME_FROM=JVM_PARAM
+APPLICATION_NAME_FROM_VALUE=Dapplication-name
 
 
 Optional Parameters
  
 TIER_NAME_FROM
-Notes: See section below - What is a tier?
-Possible values: HOSTNAME, CONTAINER_NAME, CONTAINER_LABEL, or JVM_PARAM
+Notes: See section below - What is a tier? Also, if using CONTAINER_NAME_REGEX, do not include escape characters, spaces, or add quotes around the regex
+Possible values: HOSTNAME, CONTAINER_NAME, CONTAINER_LABEL, JVM_PARAM, or CONTAINER_NAME_REGEX
 Example: TIER_NAME_FROM=CONTAINER_NAME
  
 TIER_NAME_FROM_VALUE
