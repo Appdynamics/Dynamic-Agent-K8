@@ -43,7 +43,7 @@ spec:
               fieldPath: spec.nodeName
         - name: METRIC_LIMIT
           value: "2000"
-        image: jdbarfield/dynamic-agent-k8:1.1.14
+        image: jdbarfield/dynamic-agent-k8:1.1.15
         securityContext:
           privileged: true
         name: sim-os-agent
