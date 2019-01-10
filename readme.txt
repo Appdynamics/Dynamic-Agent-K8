@@ -4,7 +4,6 @@ However you do it, please  include the following variables in your configuration
 
 All parameters:
 
-IS_K8_DEPLOYMENT
 CONTROLLER_HOST
 CONTROLLER_PORT
 CONTROLLER_SSL_ENABLED
@@ -22,9 +21,6 @@ EXCLUDE_FILTER
 
 
 Required Parameters
-
-IS_K8_DEPLOYMENT
-Must be "true", otherwise the Dynamic Agent doesn't know it's in a K8 environment.
 
 CONTROLLER_HOST
 Notes: Should not include http/https or port number
