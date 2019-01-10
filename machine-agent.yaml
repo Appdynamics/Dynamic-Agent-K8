@@ -11,8 +11,6 @@ spec:
       serviceAccountName: appd-sim-agent
       containers:
       - env:
-        - name: IS_K8_DEPLOYMENT
-          value: "true"
         - name: ACCOUNT_ACCESS_KEY
           value: <change-me>
         - name: ACCOUNT_NAME
