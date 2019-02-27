@@ -66,7 +66,7 @@ TIER_NAME_FROM
 Notes: See section below - What is a tier? Also, if using CONTAINER_NAME_REGEX, do not include escape characters, spaces, or add quotes around the regex
 Possible values: HOSTNAME, CONTAINER_NAME, CONTAINER_LABEL, JVM_PARAM, or CONTAINER_NAME_REGEX
 Example: TIER_NAME_FROM=CONTAINER_NAME
- 
+
 TIER_NAME_FROM_VALUE
 Notes: See section below - What is a tier?
 Example: TIER_NAME_FROM_VALUE=DAPPD_TIER_NAME
@@ -115,3 +115,19 @@ EXCLUDE_FILTER
 
 If you know of certain processes that you definitely don't want to instrument, you can provide a regular expression here to filter them out. For example, if no EXCLUDE_FILTER is provided, the process will exclude any Java processes that contain "Dappdynamics.controller.hostName" in the command string. This will prevent any already-instrumented processes, such as the machine agent, from getting processed.
 
+CONTAINER_NAME_WHITELIST
+Notes: Comma-delimited list. If populated, only containers whose name is a substring match of one of the entries will be instrumented. 
+Example: CONTAINER_NAME_WHITELIST=myapp1,myapp2
+
+To enable proxy integration, the following values are exposed:
+PROXY_HOST
+PROXY_PORT
+PROXY_USER
+
+LABEL_FILTER_INCLUDE
+Notes: If populated, the Dynamic Agent will only instrument containers matching one of the label names and values. Can be used in conjunction with the LABEL_FILTER_EXCLUDE setting.
+Example: LABEL_FILTER_INCLUDE=com.example.label1=jetty1,jetty2;com.example.label2=jetty2,jetty3;
+
+LABEL_FILTER_EXCLUDE
+Notes: If populated, the Dynamic Agent will NOT instrument containers matching one of the label names and values. Can be used in conjunction with the LABEL_FILTER_INCLUDE setting.
+Example: LABEL_FILTER_EXCLUDE=com.example.label1=jetty1,jetty2;com.example.label2=jetty2,jetty3;
