@@ -19,6 +19,7 @@ TIER_NAME_FROM_VALUE
 INCLUDE_FILTER
 EXCLUDE_FILTER
 UNIQUE_HOST_ID
+DEBUG_LOGGING
 
 Required Parameters
 
@@ -61,6 +62,9 @@ APPLICATION_NAME_FROM_VALUE=Dapplication-name
 
 
 Optional Parameters
+
+DEBUG_LOGGING
+When set to true, it will add extra logging to the machine agent logging output.
  
 TIER_NAME_FROM
 Notes: See section below - What is a tier? Also, if using CONTAINER_NAME_REGEX, do not include escape characters, spaces, or add quotes around the regex
