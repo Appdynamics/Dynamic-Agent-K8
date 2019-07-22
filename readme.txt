@@ -20,6 +20,7 @@ INCLUDE_FILTER
 EXCLUDE_FILTER
 UNIQUE_HOST_ID
 DEBUG_LOGGING
+MA_PROPERTIES
 
 Required Parameters
 
@@ -62,6 +63,12 @@ APPLICATION_NAME_FROM_VALUE=Dapplication-name
 
 
 Optional Parameters
+
+MA_PROPERTIES
+Used to add extra run-time parameters to the machine agent
+Examples:
+MA_PROPERTIES=-Dappdynamics.docker.container.containerIdAsHostId.enabled=true
+This will cause the Machine Agent to run with that parameter added to the runtime parameters
 
 DEBUG_LOGGING
 When set to true, it will add extra logging to the machine agent logging output.
