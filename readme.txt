@@ -21,6 +21,7 @@ EXCLUDE_FILTER
 UNIQUE_HOST_ID
 DEBUG_LOGGING
 MA_PROPERTIES
+JAVA_AGENT_PROPERITES
 
 Required Parameters
 
@@ -69,6 +70,13 @@ Used to add extra run-time parameters to the machine agent
 Examples:
 MA_PROPERTIES=-Dappdynamics.docker.container.containerIdAsHostId.enabled=true
 This will cause the Machine Agent to run with that parameter added to the runtime parameters
+
+JAVA_AGENT_PROPERITES
+Used to add extra run-time parameters to the Java agent
+Examples:
+JAVA_AGENT_PROPERITES=-Dappdynamics.agent.ssl.protocol=TLSv1.2
+This will cause the Java Agent to run with that parameter added to the runtime parameters
+Note: Adding properties not related to the Java Agent, such as -Xmx2G, will have no effect on the JVM
 
 DEBUG_LOGGING
 When set to true, it will add extra logging to the machine agent logging output.
@@ -146,3 +154,6 @@ Example: LABEL_FILTER_EXCLUDE=com.example.label1=jetty1,jetty2;com.example.label
 
 UNIQUE_HOST_ID
 Notes: If populated, the supplied value will be used as the UNIQUE_HOST_ID instead of the machine-derived UNIQUE_HOST_ID.
+
+
+LABEL_FILTER_INCLUDE=io.kubernetes.pod.namespace=namespace1,namespace2...
